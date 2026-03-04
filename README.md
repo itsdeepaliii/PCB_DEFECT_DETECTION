@@ -1,191 +1,180 @@
-# PCB Defect Detection and Classification System
-
-## 📌 Project Overview
-
-This project presents a complete automated Printed Circuit Board (PCB) defect detection and classification system using image processing and deep learning techniques.
-
-The system combines:
-
-- Reference-based image subtraction
-- Contour-based defect localization
-- EfficientNet-B0 transfer learning classification
-- Streamlit-based web interface for real-time prediction
-
-The goal is to automatically detect, localize, classify, and visualize PCB defects with high accuracy and low inference time.
-
----
-
-## 🎯 Objectives
-
-- Detect defects by comparing test PCB images with defect-free templates.
-- Extract and crop defect regions using contour detection.
-- Train a deep learning model for multi-class defect classification.
-- Develop a web-based frontend for real-time defect prediction.
-- Integrate backend image processing and CNN inference pipeline.
-- Export annotated results and prediction logs.
-
----
-
-## 🗂 Project Structure
-
-# PCB Defect Detection and Classification System
-
-## 📌 Project Overview
+🖥 PCB Defect Detection and Classification System
+📌 Project Overview
 
 This project presents a complete automated Printed Circuit Board (PCB) defect detection and classification system using image processing and deep learning techniques.
 
-The system combines:
+The system integrates:
 
-- Reference-based image subtraction
-- Contour-based defect localization
-- EfficientNet-B0 transfer learning classification
-- Streamlit-based web interface for real-time prediction
+Reference-based image subtraction
 
-The goal is to automatically detect, localize, classify, and visualize PCB defects with high accuracy and low inference time.
+Contour-based defect localization
 
----
+EfficientNet-B0 transfer learning classification
 
-## 🎯 Objectives
+Streamlit-based web interface for real-time prediction
 
-- Detect defects by comparing test PCB images with defect-free templates.
-- Extract and crop defect regions using contour detection.
-- Train a deep learning model for multi-class defect classification.
-- Develop a web-based frontend for real-time defect prediction.
-- Integrate backend image processing and CNN inference pipeline.
-- Export annotated results and prediction logs.
+The objective is to automatically detect, localize, classify, and visualize PCB defects with high accuracy and low inference time.
 
----
+🎯 Objectives
 
-## 🗂 Project Structure
+Detect defects by comparing test PCB images with defect-free templates
 
+Extract and crop defect regions using contour detection
+
+Train a deep learning model for multi-class defect classification
+
+Develop a web-based frontend for real-time defect prediction
+
+Integrate backend image processing and CNN inference pipeline
+
+Export annotated results and prediction logs
+
+🗂 Project Structure
 PCB_Project/
 │
 ├── Milestone_1_Image_Processing/
-│ ├── 01_Image_Subtraction.ipynb
-│ ├── 02_ROI_Extraction.ipynb
-│ └── README.md
+│   ├── 01_Image_Subtraction.ipynb
+│   ├── 02_ROI_Extraction.ipynb
+│   └── README.md
 │
 ├── Milestone_2_Model_Training/
-│ ├── 03_Model_Training.ipynb
-│ ├── 04_Model_Evaluation.ipynb
-│ ├── pcb_final_model.pth
-│ ├── confusion_matrix.png
-│ ├── classification_report.txt
-│ └── README.md
+│   ├── 03_Model_Training.ipynb
+│   ├── 04_Model_Evaluation.ipynb
+│   ├── pcb_final_model.pth
+│   ├── confusion_matrix.png
+│   ├── classification_report.txt
+│   └── README.md
 │
 ├── Milestone_3_Web_App/
-│ ├── app.py
-│ ├── backend/
-│ └── README.md
+│   ├── app.py
+│   ├── backend/
+│   └── README.md
 │
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+🧠 Technical Approach
+🔹 Milestone 1 – Image Processing
 
----
+Template matching
 
-## 🧠 Technical Approach
+Absolute image subtraction
 
-### 🔹 Milestone 1 – Image Processing
+Adaptive thresholding
 
-- Template matching
-- Absolute image subtraction
-- Adaptive thresholding
-- CLAHE contrast enhancement
-- Morphological filtering
-- Contour detection
-- ROI extraction
+CLAHE contrast enhancement
 
-### 🔹 Milestone 2 – Deep Learning Model
+Morphological filtering
 
-- Architecture: EfficientNet-B0 (Transfer Learning)
-- Framework: PyTorch
-- Image Size: 128x128
-- Optimizer: Adam
-- Loss Function: CrossEntropyLoss
-- Early stopping & learning rate scheduling
-- Confusion matrix and classification report generation
+Contour detection
 
-### 🔹 Milestone 3 – Web Application
+ROI extraction
 
-- Frontend: Streamlit
-- Backend: Modularized Python pipeline
-- Real-time defect detection
-- Confidence score display
-- Annotated image export
-- CSV prediction log export
+This stage isolates defect regions by comparing test PCB images against reference templates and extracting defect candidates.
 
----
+🔹 Milestone 2 – Deep Learning Model
 
-## 📊 Final Model Performance
+Architecture: EfficientNet-B0 (Transfer Learning)
 
-- ✅ Classification Accuracy: ~99%
-- ✅ Low False Positive Rate
-- ✅ Low False Negative Rate
-- ✅ Stable and repeatable training
-- ✅ Inference time < 3 seconds per image
+Framework: PyTorch
 
-The model satisfies the ≥95% accuracy requirement specified in evaluation criteria.
+Input Size: 128 × 128
 
----
+Optimizer: Adam
 
-## 🛠 Tech Stack
+Loss Function: CrossEntropyLoss
 
-| Component        | Tools Used                        |
-| ---------------- | --------------------------------- |
-| Image Processing | OpenCV, NumPy                     |
-| Deep Learning    | PyTorch, Torchvision              |
-| Dataset          | DeepPCB                           |
-| Frontend         | Streamlit                         |
-| Evaluation       | Scikit-learn, Matplotlib, Seaborn |
-| Deployment       | Modular Python Backend            |
+Early stopping and learning rate scheduling
 
----
+Confusion matrix and classification report generation
 
-## 🚀 How To Run
+This milestone focuses on training a robust CNN model for multi-class PCB defect classification.
 
-### 1️⃣ Install Dependencies
+🔹 Milestone 3 – Web Application
 
+Frontend: Streamlit
+
+Backend: Modularized Python pipeline
+
+Real-time defect detection
+
+Confidence score display
+
+Annotated image export
+
+CSV prediction log export
+
+The web application enables users to upload PCB images and receive instant annotated defect predictions.
+
+📊 Final Model Performance
+
+✅ Classification Accuracy: ~99%
+
+✅ Low False Positive Rate
+
+✅ Low False Negative Rate
+
+✅ Stable and repeatable training
+
+✅ Inference time < 3 seconds per image
+
+The model exceeds the ≥95% accuracy requirement specified in the evaluation criteria.
+
+🛠 Tech Stack
+Component	Tools Used
+Image Processing	OpenCV, NumPy
+Deep Learning	PyTorch, Torchvision
+Dataset	DeepPCB
+Frontend	Streamlit
+Evaluation	Scikit-learn, Matplotlib, Seaborn
+Deployment	Modular Python Backend
+🚀 How To Run
+1️⃣ Install Dependencies
 pip install -r requirements.txt
-
-### 2️⃣ Run Web Application
-
+2️⃣ Run Web Application
 streamlit run Milestone_3_Web_App/app.py
+3️⃣ Upload Images
 
-### 3️⃣ Upload Images
+Upload Template PCB Image
 
-- Upload Template PCB Image
-- Upload Test PCB Image
-- View annotated output with defect labels
-- Download annotated image and CSV report
+Upload Test PCB Image
 
----
+View annotated output with defect labels
 
-## 📦 Deliverables Completed
+Download annotated image and CSV report
 
-- ✔ Defect mask generation
-- ✔ ROI extraction pipeline
-- ✔ Trained CNN model checkpoint
-- ✔ Accuracy & confusion matrix
-- ✔ Web UI with upload functionality
-- ✔ Backend inference pipeline
-- ✔ Annotated output export
-- ✔ CSV prediction log export
+📦 Deliverables Completed
 
----
+✔ Defect mask generation
 
-## 🏁 Final Outcome
+✔ ROI extraction pipeline
+
+✔ Trained CNN model checkpoint
+
+✔ Accuracy and confusion matrix
+
+✔ Web UI with upload functionality
+
+✔ Backend inference pipeline
+
+✔ Annotated output export
+
+✔ CSV prediction log export
+
+🏁 Final Outcome
 
 This project delivers a fully functional PCB defect detection and classification system with:
 
-- High accuracy
-- Modular architecture
-- Real-time visualization
-- Professional milestone-based structure
-- Deployment-ready frontend interface
+High accuracy
 
----
+Modular architecture
 
-## 👩‍💻 Author
+Real-time visualization
 
-Developed as part of academic milestone-based project submission for PCB Defect Detection System.
+Professional milestone-based structure
+
+Deployment-ready frontend interface
+
+👩‍💻 Author
+
+Developed as part of an academic milestone-based project submission for the PCB Defect Detection and Classification System.
